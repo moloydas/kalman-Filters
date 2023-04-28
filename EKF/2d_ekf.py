@@ -19,7 +19,7 @@ dt=0.1
 
 # Given variances
 r_var=dataset['r_var'][0][0]
-b_var=dataset['b_var']
+b_var=dataset['b_var'][0][0]
 v_var=dataset['v_var'][0][0]
 om_var=dataset['om_var'][0][0]
 
@@ -36,6 +36,7 @@ b_var = [[0.00067143]]				sd = 0.025911966
 # b_var = 0.04
 
 Q = np.array([ [v_var,0], [0,om_var] ],dtype='float')
+print(b_var)
 R = np.array([ [r_var,0], [0,b_var] ], dtype='float')
 V = np.eye(2, dtype='float')
 
