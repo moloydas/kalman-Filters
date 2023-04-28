@@ -36,7 +36,6 @@ b_var = [[0.00067143]]				sd = 0.025911966
 # b_var = 0.04
 
 Q = np.array([ [v_var,0], [0,om_var] ],dtype='float')
-print(b_var)
 R = np.array([ [r_var,0], [0,b_var] ], dtype='float')
 V = np.eye(2, dtype='float')
 
