@@ -1,32 +1,39 @@
-# kalman-Filters
+# Kalman-Filters
 
 ## Summary
 In this Repository, I have implemented EKF and UKF localization algorithms using landmarks and their accuracy has been compared.
 
+-----------------
 ## Dataset
 Victoria Park Dataset: http://www-personal.acfr.usyd.edu.au/nebot/victoria_park.htm
 
+-----------------
+
 ## EKF
 
-Video
+### Demo
 
-**average x error:** 0.039
+[![Watch the video](EKF/demo.png)](EKF/EKF_demo.avi)
 
-**average y error:** 0.052
+### Accuracy
 
+**average x error:** 0.039 \
+**average y error:** 0.052 \
 **average theta error:** 0.029
+
 
 ## UKF
 
-Video
+### Demo
 
-**average x error:** 0.026
+[![Watch the video](UKF/demo.png)](UKF/UKF_demo.avi)
 
-**average y error:** 0.023
-
+### Accuracy
+**average x error:** 0.026 \
+**average y error:** 0.023 \
 **average theta error:** 0.030
 
-
+-----------------
 
 ## Comparisons
 
