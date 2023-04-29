@@ -142,6 +142,7 @@ if __name__ == '__main__':
 
 		v = vel[j]
 		w = om[j]
+		visible_landmark = []
 
 		if use_only_one_sensor == 1:
 			for i in range(0,len(l)):
@@ -160,9 +161,11 @@ if __name__ == '__main__':
 				if r[j,i] != 0:
 					z[0,0] = r[j,i]
 					z[1,0] = b[j,i]
-					landmark = l[i,:]					
+					landmark = l[i,:]
+					if(r[j,i] != 0):
+						visible_landmark.append(i)
 					x_est, P_est = corrected_state(x_est, P_est, z, landmark)
-			
+
 		# print("x_est: ")
 		# print(x_est)
 		# print("P: ")
