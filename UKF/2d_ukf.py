@@ -207,12 +207,19 @@ if __name__ == '__main__':
 			print("y_error:" + str(error[j,1]))
 			print("theta_error:" + str(error[j,2]), "true_val" + str(th_true[j]))
 
-		# if j%1000 == 0:
-		# 	plt.plot(l[:,0], l[:,1],'ro')
-		# 	plt.plot(l[0], l[1],'go')
-		# 	plt.plot(x_true[offset:j,0], y_true[offset:j,0],'yo')
-		# 	plt.plot(final_mu[offset:j,0], final_mu[offset:j,1],'bo')
-		# 	plt.pause(0.05)
+		# Visualize
+		if j%10 == 0:
+			plt.plot(l[:,0],l[:,1],'ro', markersize=8)
+			plt.plot(l[visible_landmark,0],l[visible_landmark,1],'o', markersize=6, color='yellow')
+			plt.plot(final_mu[:,0], final_mu[:,1],'bo',markersize=1)
+			plt.plot(final_mu[j,0], final_mu[j,1],marker=(3, 0, final_mu[j,2]*180/np.pi -90),markersize=15,color='green')
+			plt.legend(['landmarks','visible landmarks','robot trajectory','robot orientation'])
+			plt.title('UKF localization')
+			plt.xlabel('x (m)')
+			plt.ylabel('y (m)')
+			plt.savefig("plots/"+str(j).zfill(6)+".png", dpi=300)
+			plt.pause(0.01)
+			plt.clf()
 
 	print("\naverage x error: " + str(np.sqrt(np.mean(error[:,0]**2))))
 	print("max error x: ", np.max(abs(error[:,0])))

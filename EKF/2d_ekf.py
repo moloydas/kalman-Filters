@@ -200,10 +200,19 @@ if __name__ == '__main__':
 			final_error_y = np.concatenate((final_error_y,error_y))
 			final_error_theta = np.concatenate((final_error_theta,error_theta))
 
-		if j%1000 == 0:
-			plt.plot(l[:,0],l[:,1],'ro')
-			plt.plot(final_mu[:,0], final_mu[:,1],'bo')
-			plt.pause(0.005)
+		# Visualize
+		if j%10 == 0:
+			plt.plot(l[:,0],l[:,1],'ro', markersize=8)
+			plt.plot(l[visible_landmark,0],l[visible_landmark,1],'o', markersize=6, color='yellow')
+			plt.plot(final_mu[:,0], final_mu[:,1],'bo',markersize=1)
+			plt.plot(final_mu[-1,0], final_mu[-1,1],marker=(3, 0, final_mu[-1,2]*180/np.pi -90),markersize=15,color='green')
+			plt.legend(['landmarks','visible landmarks','robot trajectory','robot orientation'])
+			plt.title('EKF localization')
+			plt.xlabel('x (m)')
+			plt.ylabel('y (m)')
+			plt.savefig("plots/"+str(j).zfill(6)+".png", dpi=300)
+			plt.pause(0.01)
+			plt.clf()
 
 	print("\naverage x error: " + str(np.sqrt(np.mean(final_error_x**2))))
 	print("average y error: " + str(np.sqrt(np.mean(final_error_y**2))))
