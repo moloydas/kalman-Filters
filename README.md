@@ -13,7 +13,7 @@ Victoria Park Dataset: http://www-personal.acfr.usyd.edu.au/nebot/victoria_park.
 
 ### Demo
 
-[![Watch the video](EKF/demo.png)](EKF/EKF_demo.mp4)
+[![Watch the video](EKF/demo.png)](https://user-images.githubusercontent.com/20353960/235326934-a1f5302e-c073-4358-b96f-475755adb956.mp4)
 
 ### Accuracy
 
@@ -26,7 +26,7 @@ Victoria Park Dataset: http://www-personal.acfr.usyd.edu.au/nebot/victoria_park.
 
 ### Demo
 
-[![Watch the video](UKF/demo.png)](UKF/UKF_demo.mp4)
+[![Watch the video](UKF/demo.png)](https://user-images.githubusercontent.com/20353960/235326935-b4da737c-c51b-415d-b6e6-bbb8c84d3d4d.mp4)
 
 ### Accuracy
 **average x error:** 0.026 \
