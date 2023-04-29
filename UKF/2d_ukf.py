@@ -177,6 +177,7 @@ if __name__ == '__main__':
 	for j in range(start_time,end_time):
 		v = vel[j]
 		w = om[j]
+		visible_landmark = []
 
 		x_pred_mu, P_pred = predicted_state(x_prev, P_prev, v, w, param)
 		x_est = x_pred_mu
@@ -187,11 +188,12 @@ if __name__ == '__main__':
 				z[0,0] = r[j,i]
 				z[1,0] = b[j,i]
 				landmark = l[i,:]
+				if(r[j,i] != 0):
+					visible_landmark.append(i)
 				x_est,P_est = correct_state(x_est, P_est, z, landmark, param)
 
 		x_prev = x_est
 		P_prev = P_est
-
 		final_mu[j,:] = np.ravel(x_est.T)
 		error[j,0] = x_est[0,0] - x_true[j]
 		error[j,1] = x_est[1,0] - y_true[j]
