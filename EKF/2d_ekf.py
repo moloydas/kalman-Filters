@@ -174,7 +174,7 @@ if __name__ == '__main__':
 
 		error_x = x_est[0,0] - x_true[j]
 		error_y = x_est[1,0] - y_true[j]
-		error_theta = x_est[2,0] - th_true[j]
+		error_theta = abs(x_est[2,0]) - abs(th_true[j])
 
 		if j%100 == 0:
 			print("\niter: " + str(j))
